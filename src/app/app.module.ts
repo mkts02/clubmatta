@@ -13,6 +13,7 @@ import { UserRegisterPage } from '../pages/user-register/user-register';
 import { EventListPage } from '../pages/event-list/event-list';
 import { EventDescriptionPage } from '../pages/event-description/event-description';
 import { EventInvitationModalPage } from '../pages/event-invitation-modal/event-invitation-modal';
+import { AgreementsPage } from '../pages/agreements/agreements';
 //end pages
 
 //new components
@@ -36,6 +37,7 @@ import { Base64ToGallery } from  '@ionic-native/base64-to-gallery';
     EventListPage,
     EventDescriptionPage,
     EventInvitationModalPage,
+    AgreementsPage,
     ExpandableHeader
   ],
   imports: [
@@ -51,7 +53,7 @@ import { Base64ToGallery } from  '@ionic-native/base64-to-gallery';
     EventListPage,
     EventDescriptionPage,
     EventInvitationModalPage,
-
+    AgreementsPage
   ],
   providers: [
     StatusBar,
