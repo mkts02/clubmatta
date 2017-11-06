@@ -5,7 +5,6 @@ import
     NavController,
     ToastController,
     NavParams,
-    LoadingController,
     MenuController,
     ModalController
 } 
@@ -42,8 +41,7 @@ export class EventListPage {
     public navParams: NavParams,
     public authService: AuthServiceProvider,
     private toastCtrl:ToastController,
-    public menu: MenuController,
-    private loadingCtrl: LoadingController) {
+    public menu: MenuController) {
 
     this.getEvents();
 
