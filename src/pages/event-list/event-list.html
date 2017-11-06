@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--
+    <button ion-button color="light" clear icon-only float-right (click)="home()">
+      <ion-icon name='home' is-active="false"></ion-icon>
+    </button> -->
+    <ion-title no-padding>Eventos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cards-bg social-cards fondo">
+  <ion-card class="fondo-card" *ngFor="let item of dataSet; let msgIndex = index">
+    <img [src]="item.image">
+    <ion-grid no-padding>
+      <ion-row text-center>
+        <ion-col col-4>
+          <button class="texto" ion-button icon-left full clear small><ion-icon name="person"></ion-icon></button>
+        </ion-col>
+        <ion-col col-4>
+          <button class="texto" ion-button icon-left full clear small (click)="descripcionEvento(item)"><ion-icon name="paper"></ion-icon>INFORMACIÓN</button>
+        </ion-col>
+        <ion-col col-4>
+          <button class="texto" ion-button icon-left full clear small (click)="showInvitationModal(item)"><ion-icon name="calendar"></ion-icon>ASISTIR</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

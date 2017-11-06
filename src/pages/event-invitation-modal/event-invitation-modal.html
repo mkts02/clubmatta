@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>invitationModal</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Cerrar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-input type="text" placeholder="MY QR Code data" [(ngModel)]="qrData">
+    </ion-input>
+  </ion-item>
+  <button ion-button full icon-left (click)="createCode()"><ion-icon name="barcode"></ion-icon>Create Code</button>
+ 
+  <ion-card *ngIf="showQR">
+    <ngx-qrcode [qrc-value]="showQR"></ngx-qrcode>
+    <ion-card-content>
+      <p>Value: {{ showQR }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

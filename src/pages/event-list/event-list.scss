@@ -1,0 +1,54 @@
+page-event-list {
+
+    .fondo{
+        background-color: #3B0332;
+    }
+
+    .fondo-card{
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .botones{
+        color: white;
+    }
+
+    .asistentes{
+        margin-top: 4px;
+        margin-bottom: 4px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .texto{
+        font-size: 20px;
+        color: white !important;
+        font-weight: bold;
+    }
+    
+    /* Por debajo de 700px */
+    @media screen and (max-width: 700px){
+        .texto{
+            font-size: 12px;
+            color: white !important;
+            font-weight: bold;
+        }
+    }
+    /* Por debajo de 400px */
+    @media screen and (max-width: 400px){
+        .texto{
+            font-size: 10px;
+            color: white !important;
+            font-weight: bold;
+        }
+    }
+
+    /* Por debajo de 300px */
+    @media screen and (max-width: 300px){
+        .texto{
+            font-size: 8px;
+            color: white !important;
+            font-weight: bold;
+        }
+    }
+
+}

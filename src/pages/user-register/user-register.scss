@@ -1,0 +1,124 @@
+page-user-register {
+    
+        .border-button{
+            min-width: 50px;
+            min-height: 50px;
+            border-radius: 50%;
+    
+        }
+        ion-icon{
+            font-size: 25px;
+            padding-right: 15px;
+        }
+        .radioButton{
+            width: 100%;
+        }
+        /*.radioButton ion-item{
+            background: #FFFF;
+        }
+        */
+        .readyButton ion-icon{
+            position: absolute;
+            left:30%;
+       }
+       
+    
+        .background { 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .scroll-content {
+            background: #000000;
+            align-content: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    
+        ion-card.card {
+            margin: auto;
+            box-shadow: none;
+            background: none;
+            border-radius: 5px;
+            max-width: 500px;
+        }
+    
+        a, p,
+        ion-card-header.card-header {
+            color: #fff!important;
+        }
+    
+        ion-card-header div:first-child {
+            margin:10px auto;
+            border-radius: 10px;
+            max-height:300px;
+            max-width:300px;
+            overflow:hidden;
+    
+        }
+        ion-card-header div:first-child ion-img{
+            background: none;
+        }
+    
+        .list > .item-block:first-child {
+            border: medium none;
+        }
+        .item ion-select{
+            text-align: center;
+            color: #fff;
+        }
+        .item {
+            margin-bottom: 10px;
+            background: rgba(85,26,139,0.7);
+            border: medium none;
+
+            .input-wrapper, {
+                color: rgba(255,255,255,0.5); 
+            }
+            .text-input, {
+                color: #fff;
+                border:0;
+            }
+    
+            input::-moz-placeholder  {
+                color: #fff!important;
+            }
+    
+            input:-moz-placeholder {
+                color: #fff!important;
+            }
+    
+            *::-webkit-input-placeholder  {
+                color: #fff!important;
+            }
+    
+            *:-ms-input-placeholder  {
+                color: #fff!important;
+            }
+    
+            *:-moz-placeholder  {
+                color: #fff!important;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+        p{
+            padding: 5px 0 !important;
+        }
+    
+        .bottom {
+            position: absolute;
+            bottom: 0;
+    }
+    
+    
+    }
+    
