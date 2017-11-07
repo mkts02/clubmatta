@@ -27,6 +27,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { HttpModule } from '@angular/http';
 import { ExpandableHeader } from '../components/expandable-header/expandable-header';
 import { Base64ToGallery } from  '@ionic-native/base64-to-gallery';
+import { DisqusModule } from "ngx-disqus";
 // end new components
 
 @NgModule({
@@ -43,7 +44,8 @@ import { Base64ToGallery } from  '@ionic-native/base64-to-gallery';
   imports: [
     BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp, { scrollAssist: false, autoFocusAssist: false } ),
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    DisqusModule.forRoot('www-clubmatta-cl')
   ],
   bootstrap: [IonicApp],
   entryComponents: [
