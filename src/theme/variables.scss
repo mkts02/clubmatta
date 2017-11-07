@@ -39,24 +39,14 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  twitter: (
-    base: #55acee,
-    contrast: #ffffff
-  ),
-  clubmatta: (
-      base: #800080,
-      contrast: #ffffff
-  ),
-  facebook: (
-      base: #3b5998,
-      contrast: #ffffff
-    ),
-  google: (
-    base: #d34836,
-    contrast: #ffffff
-  )
+  twitter:    #55acee,
+  clubmatta:  #800080,
+  facebook:   #3b5998,
+  google:     #d34836
+
 );
 
+//$toolbar-background: #800080;
 
 // App iOS Variables
 // --------------------------------------------------
