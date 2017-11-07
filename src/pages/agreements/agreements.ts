@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'agreements.html',
 })
 export class AgreementsPage {
-  pet: string = "puppies";
+  convenios: string = "universidades";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

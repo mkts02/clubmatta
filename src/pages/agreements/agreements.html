@@ -192,17 +192,27 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'info'">
-      <ion-item>
-        <br>
-        <h4>INFORMACIÓN PARA TODAS LAS FIESTAS</h4>
-      </ion-item>
-      <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/ues/info.jpg">
-          </ion-thumbnail>
-          <h2>Ingreso Mujeres</h2>
-          <h6>Carnet de identidad + invitación</h6>
-        </ion-item>
+        <ion-grid>
+          <ion-row>
+                  <ion-col col-12><h3>Información para las fiestas</h3></ion-col>
+          </ion-row>
+          <ion-row>
+                  <ion-col col-4>Cliente</ion-col>
+                  <ion-col col-4>Condiciónes de ingreso</ion-col>
+                  <ion-col col-4>Hasta</ion-col>
+          </ion-row>
+          <ion-row>
+                  <ion-col col-4>Mujeres</ion-col>
+                  <ion-col col-4>Carnet + invitación</ion-col>
+                  <ion-col col-4>01:30 hrs</ion-col>
+          </ion-row>
+          <ion-row>
+          <ion-col col-4>Hombres</ion-col>
+          <ion-col col-4>Carnet + Credencial (UES invitadas) + invitación</ion-col>
+          <ion-col col-4>01:30</ion-col>
+          </ion-row>
+  </ion-grid> 
+      
     </ion-list>
   </div>
 </ion-content>

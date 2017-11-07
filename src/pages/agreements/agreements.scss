@@ -1,3 +1,20 @@
-div {
-    align-items: center;
+page-agreements{
+
+    ion-grid{
+        color: #FFF;
+    }
+    ion-grid ion-row:first-child{
+        background: #662674;
+    }
+    ion-grid ion-row:nth-child(2){
+        background: rgba(102,38,116,.9);
+    }
+    ion-grid ion-row{
+        background: rgba(102,38,116,.6);
+    }
+    ion-grid ion-row ion-col{
+        text-align: center;
+        border: 1px solid rgba(102,38,116,.3);
+    }
+
 }
