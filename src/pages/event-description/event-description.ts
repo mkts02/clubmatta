@@ -9,6 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventDescriptionPage {
 
+  events: string = "info";
+
   item;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
