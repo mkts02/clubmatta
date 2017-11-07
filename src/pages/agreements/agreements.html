@@ -7,10 +7,10 @@
   </ion-navbar>
   <ion-toolbar no-border-top>
     <ion-segment [(ngModel)]="convenios">
-      <ion-segment-button value="universidades">
+      <ion-segment-button value="universidades" (click)="getUniversities()">
         Universidades
       </ion-segment-button>
-      <ion-segment-button value="institutos">
+      <ion-segment-button value="institutos" (click)="getInstitutes()">
         Institutos
       </ion-segment-button>
       <ion-segment-button value="info">
@@ -24,171 +24,22 @@
 <ion-content>
   <div [ngSwitch]="convenios">
     <ion-list *ngSwitchCase="'universidades'">
-        <ion-item>
+        <ion-item *ngFor="let university of dataSetUniversities" >
             <ion-thumbnail item-start>
-              <img src="assets/imgs/ues/humanismo.jpg">
+              <img [src]="university.image">
             </ion-thumbnail>
-            <h2>A. Humanismo C.</h2>
+            <h2>{{university.name}}</h2>
           </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/ues/adolfoIbañez.jpg">
-        </ion-thumbnail>
-        <h2>Adolfo Ibañez</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/ues/andresBello.jpg">
-        </ion-thumbnail>
-        <h2>Andres Bello</h2>
-      </ion-item>
-      <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/ues/autonoma.jpg">
-          </ion-thumbnail>
-          <h2>Autonoma de Chile</h2>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/imgs/ues/bernardoOhiggins.jpg">
-            </ion-thumbnail>
-            <h2>Bernardo O'higgins</h2>
-          </ion-item>
-          <ion-item>
-              <ion-thumbnail item-start>
-                <img src="assets/imgs/ues/silvaHenriquez.jpg">
-              </ion-thumbnail>
-              <h2>Silva Henriquez</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                  <img src="assets/imgs/ues/catolica.jpg">
-                </ion-thumbnail>
-                <h2>Universidad Catolica</h2>
-              </ion-item>
-              <ion-item>
-                  <ion-thumbnail item-start>
-                    <img src="assets/imgs/ues/central.jpg">
-                  </ion-thumbnail>
-                  <h2>Universidad Central</h2>
-                </ion-item>
-                <ion-item>
-                    <ion-thumbnail item-start>
-                      <img src="assets/imgs/ues/uniacc.jpg">
-                    </ion-thumbnail>
-                    <h2>UNIACC</h2>
-                  </ion-item>
-                  <ion-item>
-                      <ion-thumbnail item-start>
-                        <img src="assets/imgs/ues/udechile.jpg">
-                      </ion-thumbnail>
-                      <h2>Universidad de Chile</h2>
-                    </ion-item>
-                    <ion-item>
-                        <ion-thumbnail item-start>
-                          <img src="assets/imgs/ues/delosandes.jpg">
-                        </ion-thumbnail>
-                        <h2>U. De los andes</h2>
-                      </ion-item>
-                      <ion-item>
-                          <ion-thumbnail item-start>
-                            <img src="assets/imgs/ues/udla.jpg">
-                          </ion-thumbnail>
-                          <h2>U. De las Americas</h2>
-                        </ion-item>
-                        <ion-item>
-                            <ion-thumbnail item-start>
-                              <img src="assets/imgs/ues/deldesarrollo.jpg">
-                            </ion-thumbnail>
-                            <h2>U. del desarrollo</h2>
-                          </ion-item>
-                          <ion-item>
-                              <ion-thumbnail item-start>
-                                <img src="assets/imgs/ues/delpacifico.jpg">
-                              </ion-thumbnail>
-                              <h2>U. Del pacifico</h2>
-                            </ion-item>
-                            <ion-item>
-                                <ion-thumbnail item-start>
-                                  <img src="assets/imgs/ues/diegoportales.jpg">
-                                </ion-thumbnail>
-                                <h2>Diego Portales</h2>
-                              </ion-item>
-                              <ion-item>
-                                  <ion-thumbnail item-start>
-                                    <img src="assets/imgs/ues/federicosantamaria.jpg">
-                                  </ion-thumbnail>
-                                  <h2>Federico Santa Maria</h2>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-thumbnail item-start>
-                                      <img src="assets/imgs/ues/finisterrae.jpg">
-                                    </ion-thumbnail>
-                                    <h2>U. Finis Terrae</h2>
-                                  </ion-item>
-                                  <ion-item>
-                                      <ion-thumbnail item-start>
-                                        <img src="assets/imgs/ues/gabrielamistral.jpg">
-                                      </ion-thumbnail>
-                                      <h2>U. Gabriela Mistral</h2>
-                                    </ion-item>
-                                    <ion-item>
-                                        <ion-thumbnail item-start>
-                                          <img src="assets/imgs/ues/cienciasdelaedu.jpg">
-                                        </ion-thumbnail>
-                                        <h2>U. Ciencias de la Edu.</h2>
-                                      </ion-item>
-                                      <ion-item>
-                                          <ion-thumbnail item-start>
-                                            <img src="assets/imgs/ues/mayor.jpg">
-                                          </ion-thumbnail>
-                                          <h2>Universidad Mayor</h2>
-                                        </ion-item>
-                                        <ion-item>
-                                            <ion-thumbnail item-start>
-                                              <img src="assets/imgs/ues/pedrodevaldivia.jpg">
-                                            </ion-thumbnail>
-                                            <h2>Pedro de Valdivia</h2>
-                                          </ion-item>
-                                          <ion-item>
-                                              <ion-thumbnail item-start>
-                                                <img src="assets/imgs/ues/sanseba.jpg">
-                                              </ion-thumbnail>
-                                              <h2>U. San Sebastian</h2>
-                                            </ion-item>
-                                            <ion-item>
-                                                <ion-thumbnail item-start>
-                                                  <img src="assets/imgs/ues/usach.jpg">
-                                                </ion-thumbnail>
-                                                <h2>USACH</h2>
-                                              </ion-item>
-                                              <ion-item>
-                                                  <ion-thumbnail item-start>
-                                                    <img src="assets/imgs/ues/santotomas.jpg">
-                                                  </ion-thumbnail>
-                                                  <h2>U. Santo Tomas</h2>
-                                                </ion-item>
-                                                <ion-item>
-                                                    <ion-thumbnail item-start>
-                                                      <img src="assets/imgs/ues/valpo.jpg">
-                                                    </ion-thumbnail>
-                                                    <h2>U. de Valparaiso</h2>
-                                                  </ion-item>
+      
     </ion-list>
 
     <ion-list *ngSwitchCase="'institutos'">
-      <ion-item>
+      <ion-item *ngFor="let institute of dataSetInstitutes" >
         <ion-thumbnail item-start>
-          <img src="assets/imgs/ues/duoc.jpg">
+          <img [src]="institute.image">
         </ion-thumbnail>
-        <h2>Duoc UC</h2>
+        <h2>{{institute.name}}</h2>
       </ion-item>
-          <ion-item>
-              <ion-thumbnail item-start>
-                <img src="assets/imgs/ues/inacap.jpg">
-              </ion-thumbnail>
-              <h2>Inacap</h2>
-            </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'info'">
