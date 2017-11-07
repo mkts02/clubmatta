@@ -60,7 +60,7 @@ export class ExpandableHeader {
         }
 
         if(headerElement.clientHeight<=80){
-          this.renderer.setElementStyle(headerElement, 'background', '#3B0332');
+          this.renderer.setElementStyle(headerElement, 'background', '#290329');
         } 
         else if (totalHeight <= this.newHeaderHeight) {
           //headerElement.isHidden = false;

@@ -3,7 +3,7 @@
 page-event-description {
     
     expandable-header{
-        background: #3B0332;
+        background: #290329;
     }
     expandable-header ion-item {
         position: absolute;
@@ -97,6 +97,22 @@ page-event-description {
         color:#438efd;
         font-size: 20px;
         padding-right: 10px;
+    }
+
+    .segment-md .segment-button.segment-activated{
+        border-color: #290329; 
+    }
+
+    .segment-md .segment-button {
+        color: #290329;
+    }
+
+    .segment-ios .segment-button{
+        color: #290329;
+    }
+
+    .segment-ios .segment-button.segment-activated {
+        background-color: #290329;
     }
 
 }

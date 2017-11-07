@@ -1,96 +1,108 @@
-<ion-header>
+<ion-header color="fondo">
         <expandable-header class="img-container" [scrollArea]="mycontent" maxHeaderHeight="185" minHeaderHeight="60" [image]="item.image">
-                <ion-navbar  class="show-back-button"></ion-navbar>
+                <ion-navbar class="show-back-button"></ion-navbar>
                 <ion-item no-padding [style.backgroundImage]="'url(' + item.image + ')'">
                         <div>{{item.name}}</div>
                 </ion-item>
         </expandable-header>
 
-                        <ion-segment no-border-top [(ngModel)]="events">
-                                        <ion-segment-button value="info">Información</ion-segment-button>
-                                        <ion-segment-button value="go">Asistir</ion-segment-button>
-                                        <ion-segment-button value="comments">Comentarios</ion-segment-button>
-                        </ion-segment>
+        <ion-segment no-border-top [(ngModel)]="events" class="color-texto">
+                <ion-segment-button value="info">Información</ion-segment-button>
+                <ion-segment-button value="go">Asistir</ion-segment-button>
+                <ion-segment-button value="comments">Comentarios</ion-segment-button>
+        </ion-segment>
 </ion-header>
-<ion-content padding fullscreen #mycontent>
-        <div class="date">
-                <div><ion-icon name="calendar"></ion-icon>Fecha: {{item.event_date}}</div>
-                <div><ion-icon name="time"></ion-icon>Hora: {{item.event_time}}</div>
+<ion-content color="fondo" padding fullscreen #mycontent>
+        <div [ngSwitch]="events">
+                <div *ngSwitchCase="'info'">
+                        <div no-border no-padding class="date">
+                                <div>
+                                        <ion-icon name="calendar"></ion-icon>Fecha: {{item.event_date}}</div>
+                                <div>
+                                        <ion-icon name="time"></ion-icon>Hora: {{item.event_time}}</div>
+                        </div>
+                        <p>Descripción: {{item.description}}</p>
+                        <br>
+                        <ion-grid>
+                                <ion-row>
+                                        <ion-col col-12>Precios Barra</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>Producto</ion-col>
+                                        <ion-col col-4>Descripcion</ion-col>
+                                        <ion-col col-4>Hasta</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>Corona</ion-col>
+                                        <ion-col col-4>4x3</ion-col>
+                                        <ion-col col-4>00:00 hrs</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>Pisco, Ron o Vodka</ion-col>
+                                        <ion-col col-4>1/2 Lts $4000</ion-col>
+                                        <ion-col col-4>Toda la Noche</ion-col>
+                                </ion-row>
+                        </ion-grid>
+                        <p>Condiciones de Ingreso</p>
+                        <p>----------</p>
+
+                        <ion-grid>
+                                <ion-row>
+                                        <ion-col col-12>Hombre</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>Desde</ion-col>
+                                        <ion-col col-4>Hasta</ion-col>
+                                        <ion-col col-4>Valor</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>23:00</ion-col>
+                                        <ion-col col-4>00:30</ion-col>
+                                        <ion-col col-4>$0</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>00:31</ion-col>
+                                        <ion-col col-4>01:30</ion-col>
+                                        <ion-col col-4>$3000</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>01:31</ion-col>
+                                        <ion-col col-4>Cierre</ion-col>
+                                        <ion-col col-4>$5000</ion-col>
+                                </ion-row>
+                        </ion-grid>
+
+                        <ion-grid>
+                                <ion-row>
+                                        <ion-col col-12>Mujer</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>Desde</ion-col>
+                                        <ion-col col-4>Hasta</ion-col>
+                                        <ion-col col-4>Valor</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>23:00</ion-col>
+                                        <ion-col col-4>01:00</ion-col>
+                                        <ion-col col-4>$0</ion-col>
+                                </ion-row>
+                                <ion-row>
+                                        <ion-col col-4>01:01</ion-col>
+                                        <ion-col col-4>Cierre</ion-col>
+                                        <ion-col col-4>$3000</ion-col>
+                                </ion-row>
+                        </ion-grid>
+                        <p text-center>
+                                <ion-icon name="information-circle" class="info-icon"></ion-icon>Valores sin invitación: $5000.</p>
+                </div>
+
+                <div *ngSwitchCase="'go'">
+                        
+                </div>
+                <div *ngSwitchCase="'comments'">
+                        <disqus [identifier]="pageId"></disqus>
+                </div>
+
+                <!--<p>ASISTENTES: </p>-->
         </div>
-        <p>Descripción: {{item.description}}</p>
-
-        <!--<p>ASISTENTES: </p>-->   
-
-        <ion-grid>
-                <ion-row>
-                        <ion-col col-12>Precios Barra</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>Producto</ion-col>
-                        <ion-col col-4>Descripcion</ion-col>
-                        <ion-col col-4>Hasta</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>Corona</ion-col>
-                        <ion-col col-4>4x3</ion-col>
-                        <ion-col col-4>00:00 hrs</ion-col>
-                </ion-row>
-                <ion-row>
-                <ion-col col-4>Pisco, Ron o Vodka</ion-col>
-                <ion-col col-4>1/2 Lts $4000</ion-col>
-                <ion-col col-4>Toda la Noche</ion-col>
-                </ion-row>
-        </ion-grid> 
-        <p>Condiciones de Ingreso</p>
-        <p>----------</p>
-
-        <ion-grid>
-                <ion-row>
-                        <ion-col col-12>Hombre</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>Desde</ion-col>
-                        <ion-col col-4>Hasta</ion-col>
-                        <ion-col col-4>Valor</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>23:00</ion-col>
-                        <ion-col col-4>00:30</ion-col>
-                        <ion-col col-4>$0</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>00:31</ion-col>
-                        <ion-col col-4>01:30</ion-col>
-                        <ion-col col-4>$3000</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>01:31</ion-col>
-                        <ion-col col-4>Cierre</ion-col>
-                        <ion-col col-4>$5000</ion-col>
-                </ion-row>            
-        </ion-grid> 
-
-        <ion-grid>
-                <ion-row>
-                        <ion-col col-12>Mujer</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>Desde</ion-col>
-                        <ion-col col-4>Hasta</ion-col>
-                        <ion-col col-4>Valor</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>23:00</ion-col>
-                        <ion-col col-4>01:00</ion-col>
-                        <ion-col col-4>$0</ion-col>
-                </ion-row>
-                <ion-row>
-                        <ion-col col-4>01:01</ion-col>
-                        <ion-col col-4>Cierre</ion-col>
-                        <ion-col col-4>$3000</ion-col>
-                </ion-row>          
-        </ion-grid> 
-        <p text-center><ion-icon name="information-circle" class="info-icon"></ion-icon>Valores sin invitación: $5000.</p>
-
-    
 </ion-content>

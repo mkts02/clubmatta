@@ -12,11 +12,11 @@
 </ion-header>
 
 
-<ion-content class="cards-bg social-cards fondo">
+<ion-content class="cards-bg social-cards" color="fondo">
   <ion-card class="fondo-card" *ngFor="let item of dataSet; let msgIndex = index">
     <img [src]="item.image">
     <ion-grid no-padding>
-      <ion-row text-center>
+      <ion-row text-center class="color-card">
         <ion-col col-4>
           <button class="texto" ion-button icon-left full clear small><ion-icon name="person"></ion-icon></button>
         </ion-col>
