@@ -6,15 +6,15 @@
     <ion-title no-padding>Convenios</ion-title>
   </ion-navbar>
   <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="pet">
-      <ion-segment-button value="puppies">
-        Puppies
+    <ion-segment [(ngModel)]="convenios">
+      <ion-segment-button value="universidades">
+        Universidades
       </ion-segment-button>
-      <ion-segment-button value="kittens">
-        Kittens
+      <ion-segment-button value="institutos">
+        Institutos
       </ion-segment-button>
-      <ion-segment-button value="ducklings">
-        Ducklings
+      <ion-segment-button value="info">
+        Información
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -22,86 +22,203 @@
 
 
 <ion-content>
-  <div [ngSwitch]="pet">
-    <ion-list *ngSwitchCase="'puppies'">
+  <div [ngSwitch]="convenios">
+    <ion-list *ngSwitchCase="'universidades'">
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/ues/humanismo.jpg">
+            </ion-thumbnail>
+            <h2>A. Humanismo C.</h2>
+          </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-1.jpg">
+          <img src="assets/imgs/ues/adolfoIbañez.jpg">
         </ion-thumbnail>
-        <h2>Ruby</h2>
+        <h2>Adolfo Ibañez</h2>
       </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-2.jpg">
+          <img src="assets/imgs/ues/andresBello.jpg">
         </ion-thumbnail>
-        <h2>Oscar</h2>
+        <h2>Andres Bello</h2>
       </ion-item>
       <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-4.jpg">
-        </ion-thumbnail>
-        <h2>Zoey</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-3.jpg">
-        </ion-thumbnail>
-        <h2>Otto</h2>
-      </ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/ues/autonoma.jpg">
+          </ion-thumbnail>
+          <h2>Autonoma de Chile</h2>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/ues/bernardoOhiggins.jpg">
+            </ion-thumbnail>
+            <h2>Bernardo O'higgins</h2>
+          </ion-item>
+          <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/ues/silvaHenriquez.jpg">
+              </ion-thumbnail>
+              <h2>Silva Henriquez</h2>
+            </ion-item>
+            <ion-item>
+                <ion-thumbnail item-start>
+                  <img src="assets/imgs/ues/catolica.jpg">
+                </ion-thumbnail>
+                <h2>Universidad Catolica</h2>
+              </ion-item>
+              <ion-item>
+                  <ion-thumbnail item-start>
+                    <img src="assets/imgs/ues/central.jpg">
+                  </ion-thumbnail>
+                  <h2>Universidad Central</h2>
+                </ion-item>
+                <ion-item>
+                    <ion-thumbnail item-start>
+                      <img src="assets/imgs/ues/uniacc.jpg">
+                    </ion-thumbnail>
+                    <h2>UNIACC</h2>
+                  </ion-item>
+                  <ion-item>
+                      <ion-thumbnail item-start>
+                        <img src="assets/imgs/ues/udechile.jpg">
+                      </ion-thumbnail>
+                      <h2>Universidad de Chile</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-thumbnail item-start>
+                          <img src="assets/imgs/ues/delosandes.jpg">
+                        </ion-thumbnail>
+                        <h2>U. De los andes</h2>
+                      </ion-item>
+                      <ion-item>
+                          <ion-thumbnail item-start>
+                            <img src="assets/imgs/ues/udla.jpg">
+                          </ion-thumbnail>
+                          <h2>U. De las Americas</h2>
+                        </ion-item>
+                        <ion-item>
+                            <ion-thumbnail item-start>
+                              <img src="assets/imgs/ues/deldesarrollo.jpg">
+                            </ion-thumbnail>
+                            <h2>U. del desarrollo</h2>
+                          </ion-item>
+                          <ion-item>
+                              <ion-thumbnail item-start>
+                                <img src="assets/imgs/ues/delpacifico.jpg">
+                              </ion-thumbnail>
+                              <h2>U. Del pacifico</h2>
+                            </ion-item>
+                            <ion-item>
+                                <ion-thumbnail item-start>
+                                  <img src="assets/imgs/ues/diegoportales.jpg">
+                                </ion-thumbnail>
+                                <h2>Diego Portales</h2>
+                              </ion-item>
+                              <ion-item>
+                                  <ion-thumbnail item-start>
+                                    <img src="assets/imgs/ues/federicosantamaria.jpg">
+                                  </ion-thumbnail>
+                                  <h2>Federico Santa Maria</h2>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-thumbnail item-start>
+                                      <img src="assets/imgs/ues/finisterrae.jpg">
+                                    </ion-thumbnail>
+                                    <h2>U. Finis Terrae</h2>
+                                  </ion-item>
+                                  <ion-item>
+                                      <ion-thumbnail item-start>
+                                        <img src="assets/imgs/ues/gabrielamistral.jpg">
+                                      </ion-thumbnail>
+                                      <h2>U. Gabriela Mistral</h2>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-thumbnail item-start>
+                                          <img src="assets/imgs/ues/cienciasdelaedu.jpg">
+                                        </ion-thumbnail>
+                                        <h2>U. Ciencias de la Edu.</h2>
+                                      </ion-item>
+                                      <ion-item>
+                                          <ion-thumbnail item-start>
+                                            <img src="assets/imgs/ues/mayor.jpg">
+                                          </ion-thumbnail>
+                                          <h2>Universidad Mayor</h2>
+                                        </ion-item>
+                                        <ion-item>
+                                            <ion-thumbnail item-start>
+                                              <img src="assets/imgs/ues/pedrodevaldivia.jpg">
+                                            </ion-thumbnail>
+                                            <h2>Pedro de Valdivia</h2>
+                                          </ion-item>
+                                          <ion-item>
+                                              <ion-thumbnail item-start>
+                                                <img src="assets/imgs/ues/sanseba.jpg">
+                                              </ion-thumbnail>
+                                              <h2>U. San Sebastian</h2>
+                                            </ion-item>
+                                            <ion-item>
+                                                <ion-thumbnail item-start>
+                                                  <img src="assets/imgs/ues/usach.jpg">
+                                                </ion-thumbnail>
+                                                <h2>USACH</h2>
+                                              </ion-item>
+                                              <ion-item>
+                                                  <ion-thumbnail item-start>
+                                                    <img src="assets/imgs/ues/santotomas.jpg">
+                                                  </ion-thumbnail>
+                                                  <h2>U. Santo Tomas</h2>
+                                                </ion-item>
+                                                <ion-item>
+                                                    <ion-thumbnail item-start>
+                                                      <img src="assets/imgs/ues/valpo.jpg">
+                                                    </ion-thumbnail>
+                                                    <h2>U. de Valparaiso</h2>
+                                                  </ion-item>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'kittens'">
+    <ion-list *ngSwitchCase="'institutos'">
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-1.jpg">
+          <img src="assets/imgs/ues/duoc.jpg">
         </ion-thumbnail>
-        <h2>Luna</h2>
+        <h2>Duoc UC</h2>
+        <h6>Sede Apoquindo</h6>
       </ion-item>
       <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-3.jpg">
-        </ion-thumbnail>
-        <h2>Milo</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-4.jpg">
-        </ion-thumbnail>
-        <h2>Bandit</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-2.jpg">
-        </ion-thumbnail>
-        <h2>Nala</h2>
-      </ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/ues/duoc.jpg">
+          </ion-thumbnail>
+          <h2>Duoc UC</h2>
+          <h6>Sede Alonso de Ovalle</h6>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/ues/duoc.jpg">
+            </ion-thumbnail>
+            <h2>Duoc UC</h2>
+            <h6>Sede Antonio Varas</h6>
+          </ion-item>
+          <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/ues/inacap.jpg">
+              </ion-thumbnail>
+              <h2>Inacap</h2>
+              <h6>Sede Apoquindo</h6>
+            </ion-item>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'ducklings'">
+    <ion-list *ngSwitchCase="'info'">
       <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-duckling-1.jpg">
-        </ion-thumbnail>
-        <h2>Daffy</h2>
+        <br>
+        <h4>INFORMACIÓN PARA TODAS LAS FIESTAS</h4>
       </ion-item>
       <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-duckling-2.jpg">
-        </ion-thumbnail>
-        <h2>Huey</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-duckling-3.jpg">
-        </ion-thumbnail>
-        <h2>Dewey</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-duckling-4.jpg">
-        </ion-thumbnail>
-        <h2>Louie</h2>
-      </ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/ues/info.jpg">
+          </ion-thumbnail>
+          <h2>Ingreso Mujeres</h2>
+          <h6>Carnet de identidad + invitación</h6>
+        </ion-item>
     </ion-list>
   </div>
 </ion-content>
