@@ -45,7 +45,7 @@ import { DisqusModule } from "ngx-disqus";
     BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp, { scrollAssist: false, autoFocusAssist: false } ),
     NgxQRCodeModule,
-    DisqusModule.forRoot('www-clubmatta-cl')
+    DisqusModule.forRoot('clubmatta')
   ],
   bootstrap: [IonicApp],
   entryComponents: [
