@@ -12,7 +12,7 @@ import { AgreementsPage } from '../pages/agreements/agreements';
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = EventListPage;
+  rootPage:any = UserLoginPage;
   pages: Array<{title: string, component: any}>;
   
   constructor(
@@ -27,9 +27,8 @@ export class MyApp {
       
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Eventos', component: EventListPage },
-      { title: 'Convenios', component: AgreementsPage },
-      { title: 'Cerrar Sesión', component: UserLoginPage }
+      { title: 'Eventos', component: EventListPage},
+      { title: 'Convenios', component: AgreementsPage}
       
     ];
       
@@ -73,7 +72,7 @@ export class MyApp {
  
    logout(){
      //Api Token Logout 
-     
+     this.nav.setRoot(UserLoginPage);
      localStorage.clear();
      this.menu.enable(false);
       setTimeout(()=> this.backToWelcome(), 1000);

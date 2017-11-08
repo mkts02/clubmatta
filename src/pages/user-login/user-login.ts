@@ -30,9 +30,14 @@ export class UserLoginPage {
     public common: Common,
     private toastCtrl:ToastController,
     private nativePageTransitions: NativePageTransitions) {
+      if(localStorage.getItem('userData')){
+        this.navCtrl.setRoot(EventListPage);
+      }
 
       this.fb.browserInit(this.FB_APP_ID, "v2.10");
-  }
+
+      
+  }// cierra constructor
 
   Gosignup(){
     this.navCtrl.push(UserRegisterPage);
@@ -57,7 +62,7 @@ export class UserLoginPage {
     if(this.resposeData.userData){
      localStorage.setItem('userData', JSON.stringify(this.resposeData) )
       env.goEvents();
-
+      console.log(this.resposeData);
     }
     else{
       com.closeLoading();
@@ -116,7 +121,7 @@ export class UserLoginPage {
                 env.authService.postData(user, "facebookLogin").then((result) =>{
                 env.resposeData = result;
                 console.log(JSON.stringify(env.resposeData));
-                localStorage.setItem('user', JSON.stringify(env.resposeData) )
+                localStorage.setItem('userData', JSON.stringify(env.resposeData) )
                 env.goEvents();
   
                 }, (err) => {
@@ -154,7 +159,7 @@ export class UserLoginPage {
       env.authService.postData(user, "googleLogin").then((result) =>{
       env.resposeData = result;
       console.log(JSON.stringify(env.resposeData));
-      localStorage.setItem('user', JSON.stringify(env.resposeData) )
+      localStorage.setItem('userData', JSON.stringify(env.resposeData) )
       
 
       }, (err) => {

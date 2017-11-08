@@ -6,8 +6,7 @@
                 <ion-avatar item-start>
                     <img src="assets/imgs/iconoDrawer.png">
                   </ion-avatar>
-            </div>
-              
+            </div>              
               <h2>Marty McFly</h2>
               <p>November 5, 1955</p>
           </ion-item>  
@@ -18,6 +17,9 @@
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
+        </button>        
+        <button menuClose ion-item (click)="logout()">
+          Cerrar Sesión
         </button>
       </ion-list>
     </ion-content>
