@@ -114,11 +114,9 @@ page-user-register {
             padding: 5px 0 !important;
         }
     
-        .bottom {
-            position: absolute;
-            bottom: 0;
-    }
-    
+        ion-grid ion-row:last-child(){
+            margin-top:50px;
+        }
     
     }
     
