@@ -1,7 +1,30 @@
-.div-center {
+.navigation .toolbar-background{
+    background: url("../../assets/imgs/navigationBackground.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
     text-align: center;
 }
-
-img{
-    margin-top: 7px;
+.navigation ion-toolbar ion-item{
+    background: none;
+}
+.navigation ion-toolbar ion-item .avatar {
+    padding-bottom: 10px;
+}
+.navigation .item-md.item-block .item-inner{
+    border: 0;
+}
+.navigation ion-content{
+    background: #12191f;
+}
+.navigation ion-content ion-list .item{
+    background: none;
+    color: #999999;
+}
+.navigation ion-content ion-list button:hover{
+    background: #4d1a7f;
+    color: #704798;
+}
+.active {
+    background: #4d1a7f;
+    color: #825ea5;
 }
