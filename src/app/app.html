@@ -3,12 +3,15 @@
       <ion-toolbar color="clubmatta">
           <ion-item no-lines>
             <div class="avatar">
+                <button ion-button color="light" clear icon-only float-right (click)="logout()">
+                    <ion-icon name='close-circle' is-active="false"></ion-icon>
+                  </button>
                 <ion-avatar item-start>
                     <img src="assets/imgs/iconoDrawer.png">
                   </ion-avatar>
             </div>              
               <h2>Marty McFly</h2>
-              <p>November 5, 1955</p>
+              <p>November 5, 1955</p>              
           </ion-item>  
       </ion-toolbar>  
     </ion-header>
@@ -17,9 +20,6 @@
       <ion-list no-lines>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
-        </button>        
-        <button menuClose ion-item (click)="logout()">
-          Cerrar Sesión
         </button>
       </ion-list>
     </ion-content>
