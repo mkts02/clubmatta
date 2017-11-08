@@ -1,7 +1,7 @@
 <ion-menu class="navigation" [content]="content">
     <ion-header>
       <ion-toolbar color="clubmatta">
-          <ion-item>
+          <ion-item no-lines>
             <div class="avatar">
                 <ion-avatar item-start>
                     <img src="assets/imgs/iconoDrawer.png">
@@ -14,7 +14,7 @@
     </ion-header>
   
     <ion-content>
-      <ion-list>
+      <ion-list no-lines>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
         </button>        
