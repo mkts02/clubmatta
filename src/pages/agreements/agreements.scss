@@ -17,4 +17,24 @@ page-agreements{
         border: 1px solid rgba(102,38,116,.3);
     }
 
+    .segment-md .segment-button.segment-activated{
+        border-color: #290329; 
+    }
+
+    .segment-md .segment-button {
+        color: #290329;
+    }
+
+    .segment-ios .segment-button{
+        color: #290329;
+    }
+
+    .segment-ios .segment-button.segment-activated {
+        background-color: #290329;
+    }
+
+    .segment-ios .segment-button{
+        border-color: #fff;
+    }
+
 }
