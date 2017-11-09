@@ -42,7 +42,8 @@ export class EventListPage {
     public authService: AuthServiceProvider,
     private toastCtrl:ToastController,
     public menu: MenuController) {
-
+    
+      menu.enable(true);
     this.getEvents();
 
   }// cierra constructor

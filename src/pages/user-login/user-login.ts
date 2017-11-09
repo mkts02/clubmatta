@@ -193,7 +193,7 @@ export class UserLoginPage {
       fixedPixelsBottom: 60
      };
       this.nativePageTransitions.flip(options);
-      this.navCtrl.setRoot(EventListPage);
+      this.navCtrl.push(EventListPage);
     
     }
 

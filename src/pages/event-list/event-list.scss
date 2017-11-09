@@ -12,6 +12,10 @@ page-event-list {
         color: white;
     }
 
+    ion-navbar[hidebackbutton] button[menutoggle] {
+        display: block !important;
+      }
+
     .asistentes{
         margin-top: 4px;
         margin-bottom: 4px;
