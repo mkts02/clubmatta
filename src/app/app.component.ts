@@ -16,7 +16,7 @@ export class MyApp {
   rootPage:any = UserLoginPage;
   pages: Array<{title: string, component: any, icon: string}>;
   public static userDetails : any;
-  userDetails = {first_name: '1', last_name: '2', username: '3'};
+  userDetails = {first_name: '1', last_name: '2', username: '3', avatar: ''};
   
   constructor(
      public platform: Platform,

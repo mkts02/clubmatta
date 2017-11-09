@@ -11,7 +11,8 @@
       <ion-item no-lines>
         <div class="avatar">
           <ion-avatar item-start>
-            <img src="assets/imgs/iconoDrawer.png">
+            <!--<img src="assets/imgs/iconoDrawer.png">-->
+            <img [src]="userDetails.avatar">
           </ion-avatar>
         </div>
         <h2 >{{userDetails.first_name}} {{userDetails.last_name}}</h2>
