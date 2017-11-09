@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
 @IonicPage()
 @Component({
@@ -19,9 +17,7 @@ export class EventInvitationModalPage {
   
   constructor(
     public view: ViewController,
-    public navParams: NavParams,
-    private barcodeScanner: BarcodeScanner,
-    private base64ToGallery: Base64ToGallery) {
+    public navParams: NavParams) {
     
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;

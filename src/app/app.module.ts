@@ -18,7 +18,6 @@ import { AgreementsPage } from '../pages/agreements/agreements';
 
 //new components
 import { NgxQRCodeModule } from 'ngx-qrcode2';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { AuthServiceProvider } from '../providers/auth-service';
 import { Common } from '../providers/common';
 import { Facebook } from '@ionic-native/facebook';
@@ -26,7 +25,6 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { HttpModule } from '@angular/http';
 import { ExpandableHeader } from '../components/expandable-header/expandable-header';
-import { Base64ToGallery } from  '@ionic-native/base64-to-gallery';
 import { DisqusModule } from "ngx-disqus";
 // end new components
 
@@ -65,9 +63,7 @@ import { DisqusModule } from "ngx-disqus";
     Common,
     Facebook,
     GooglePlus,
-    NativePageTransitions,
-    BarcodeScanner,
-    Base64ToGallery
+    NativePageTransitions
   ]
 })
 export class AppModule {}
