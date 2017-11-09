@@ -64,32 +64,38 @@ page-event-description {
         margin-top:10px;
     }
     .date{
-        width: 100%;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .date div{
-        float: left;
-        width: 50%;
-        margin: 0;
-        padding: 0;
-    }
-    .date div ion-icon{
-        padding-right: 10px;
-    }
-    ion-grid{
+        box-shadow: 0 0 10px #662674;
+        background: #662674;;
         color: #FFF;
     }
-    ion-grid ion-row:first-child{
+
+    .date ion-row ion-col div{
+        width: 100%;
+        text-align: center;
+    }
+    .date ion-row ion-col ion-icon{
+        position: absolute;
+        left: 7px;
+    }
+    .date button, .date .button-md{
+        border-radius: 5px;
+        padding: 7px 10px;
+        border:2px solid #FFF;
+        margin:0;
+    }
+    .description{
+        color: #FFF;
+    }
+    .description ion-row:first-child{
         background: #662674;
     }
-    ion-grid ion-row:nth-child(2){
+    .description ion-row:nth-child(2){
         background: rgba(102,38,116,.9);
     }
-    ion-grid ion-row{
+    .description ion-row{
         background: rgba(102,38,116,.6);
     }
-    ion-grid ion-row ion-col{
+    .description ion-row ion-col{
         text-align: center;
         border: 1px solid rgba(102,38,116,.3);
     }

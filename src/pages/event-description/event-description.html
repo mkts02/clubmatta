@@ -8,22 +8,32 @@
 
         <ion-segment no-border-top [(ngModel)]="events" class="color-texto">
                 <ion-segment-button value="info">Información</ion-segment-button>
-                <ion-segment-button value="go">Asistir</ion-segment-button>
                 <ion-segment-button value="comments">Comentarios</ion-segment-button>
         </ion-segment>
 </ion-header>
 <ion-content color="fondo" padding fullscreen #mycontent>
         <div [ngSwitch]="events">
                 <div *ngSwitchCase="'info'">
-                        <div no-border no-padding class="date">
-                                <div>
-                                        <ion-icon name="calendar"></ion-icon>Fecha: {{item.event_date}}</div>
-                                <div>
-                                        <ion-icon name="time"></ion-icon>Hora: {{item.event_time}}</div>
-                        </div>
+                        <ion-grid no-border class="date">
+                                <ion-row align-items-center>
+                                        <ion-col col-4>
+                                                <ion-icon name="md-calendar"></ion-icon>
+                                                <div>Fecha:</div>
+                                                <div>{{item.event_date}}</div>
+                                        </ion-col>
+                                        <ion-col col-4>
+                                                <ion-icon name="md-time"></ion-icon>
+                                                <div>Hora:</div>
+                                                <div>{{item.event_time}}</div>
+                                        </ion-col>
+                                        <ion-col col-4>
+                                                <button ion-button (click)="showInvitationModal(item)">Asistir</button>
+                                        </ion-col>
+                                </ion-row>
+                        </ion-grid>
                         <p>Descripción: {{item.description}}</p>
                         <br>
-                        <ion-grid>
+                        <ion-grid class="description">
                                 <ion-row>
                                         <ion-col col-12>Precios Barra</ion-col>
                                 </ion-row>
