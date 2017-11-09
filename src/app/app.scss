@@ -48,3 +48,7 @@
 .profile p, .profile h2{
     color: #FFF;
 }
+.item-md ion-avatar img, .item-ios ion-avatar img{
+    min-width: 50px;
+    min-height: 50px;
+}
