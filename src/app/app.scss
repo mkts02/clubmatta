@@ -17,10 +17,6 @@
     background: none;
     color: #999999;
 }
-.navigation ion-content ion-list button:hover{
-    background: #4d1a7f;
-    color: #704798;
-}
 .exit{
     position: absolute;
     right: 0px;
@@ -48,4 +44,7 @@
 .active{
     background: #4d1a7f !important;
     color: #825ea5 !important;
+}
+.profile p, .profile h2{
+    color: #FFF;
 }

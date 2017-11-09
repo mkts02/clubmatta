@@ -1,12 +1,12 @@
 <ion-menu class="navigation" [content]="content">
   <ion-header>
-    <ion-toolbar color="clubmatta">
+    <ion-toolbar color="clubmatta" class="profile">
       <div class="exit">
-      <button ion-button color="light" icon-only clear color="light" (click)="logout()">
-        <ion-icon name='close-circle' is-active="false"></ion-icon>
-      </button>
-      <div>Salir</div>
-    </div>
+        <button ion-button color="light" icon-only clear color="light" (click)="logout()">
+          <ion-icon name='close-circle' is-active="false"></ion-icon>
+        </button>
+        <div>Salir</div>
+      </div>
 
       <ion-item no-lines>
         <div class="avatar">
@@ -23,8 +23,8 @@
   <ion-content>
     <ion-list no-lines class="menuList">
       <button menuClose ion-item *ngFor="let p of pages" [class.active]="checkActivePage(p)" (click)="openPage(p)">
-          <ion-icon item-left [name]='p.icon' is-active="false"></ion-icon>    
-          <div float-left>{{p.title}}</div>
+        <ion-icon item-left [name]='p.icon' is-active="false"></ion-icon>
+        <div float-left>{{p.title}}</div>
       </button>
     </ion-list>
   </ion-content>
