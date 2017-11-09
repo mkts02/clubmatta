@@ -12,8 +12,9 @@ import { AgreementsPage } from '../pages/agreements/agreements';
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
+  activePage: any;
   rootPage:any = UserLoginPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
   
   constructor(
      public platform: Platform,
@@ -27,8 +28,8 @@ export class MyApp {
       
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Eventos', component: EventListPage},
-      { title: 'Convenios', component: AgreementsPage}
+      { title: 'Eventos', component: EventListPage, icon: "clipboard"},
+      { title: 'Convenios', component: AgreementsPage, icon: "home"}
       
     ];
       
@@ -47,6 +48,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+    this.activePage = page;
+  }
+  public checkActivePage(page): boolean{
+    return page === this.activePage;
   }
 /*
   openPage(page) {
