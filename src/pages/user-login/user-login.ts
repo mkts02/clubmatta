@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
-import { IonicPage, NavController, ToastController,MenuController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController,MenuController, Events } from 'ionic-angular';
 import { AuthServiceProvider } from "../../providers/auth-service";
 import { Common } from '../../providers/common';
 import { EventListPage } from '../event-list/event-list';
 import { UserRegisterPage } from '../user-register/user-register';
+import {MyApp} from '../../app/app.component'
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 @IonicPage()
@@ -20,6 +21,7 @@ export class UserLoginPage {
   
   resposeData : any;
   userData = {"username":"", "password":""};
+  userDetails: any;
 
   constructor(
     public fb: Facebook,
@@ -29,7 +31,8 @@ export class UserLoginPage {
     public authService: AuthServiceProvider, 
     public common: Common,
     private toastCtrl:ToastController,
-    private nativePageTransitions: NativePageTransitions) {
+    private nativePageTransitions: NativePageTransitions,
+  public events: Events) {
       if(localStorage.getItem('userData')){
         this.navCtrl.setRoot(EventListPage);
       }
@@ -38,6 +41,7 @@ export class UserLoginPage {
 
       
   }// cierra constructor
+
 
   Gosignup(){
     this.navCtrl.push(UserRegisterPage);
@@ -160,7 +164,7 @@ export class UserLoginPage {
       env.resposeData = result;
       console.log(JSON.stringify(env.resposeData));
       localStorage.setItem('userData', JSON.stringify(env.resposeData) )
-      
+      env.goEvents();
 
       }, (err) => {
         console.log(JSON.stringify(err));
@@ -180,6 +184,10 @@ export class UserLoginPage {
     toast.present();
   }
 
+  usuarioIniciado() {
+    this.events.publish('functionCall:usuarioIniciado', localStorage.getItem('userData'));
+  }
+
   goEvents() {
     
     let options: NativeTransitionOptions = {
@@ -192,7 +200,9 @@ export class UserLoginPage {
       fixedPixelsTop: 0,
       fixedPixelsBottom: 60
      };
+     this.usuarioIniciado();
       this.nativePageTransitions.flip(options);
+
       this.navCtrl.push(EventListPage);
     
     }

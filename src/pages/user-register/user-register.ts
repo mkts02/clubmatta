@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController} from 'ionic-angular';
+import {IonicPage, NavController, Events} from 'ionic-angular';
 import {AuthServiceProvider} from "../../providers/auth-service";
 
 import {UserLoginPage} from "../user-login/user-login";
@@ -18,7 +18,12 @@ export class UserRegisterPage {
   resposeData : any;
   userData = {"name":"", "lname":"", "email":"", "password":"", "birthday":"", "gender":""};
 
-  constructor(public navCtrl : NavController, public authService : AuthServiceProvider) {}
+  constructor
+  (
+    public navCtrl : NavController, 
+    public authService : AuthServiceProvider,
+    public events: Events
+  ) {}
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad Signup');
@@ -44,6 +49,7 @@ export class UserRegisterPage {
    // console.log(this.resposeData);
     localStorage.setItem('userData', JSON.stringify(this.resposeData) )
     //si todo es correcto, los datos son guardados en la bd, se crea una sesion y se redirige a la pagina de eventos.
+      this.usuarioIniciado();
     this.navCtrl.setRoot(EventListPage);
     }, (err) => {
       //Connection failed message
@@ -59,6 +65,10 @@ export class UserRegisterPage {
     this
       .navCtrl
       .push(UserLoginPage);
+  }
+
+  usuarioIniciado() {
+    this.events.publish('functionCall:usuarioIniciado', localStorage.getItem('userData'));
   }
 
 }

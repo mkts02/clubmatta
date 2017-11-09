@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav,Platform,MenuController,App } from 'ionic-angular';
+import { Nav,Platform,MenuController,App, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { EventListPage } from '../pages/event-list/event-list';
@@ -15,14 +15,17 @@ export class MyApp {
   activePage: any;
   rootPage:any = UserLoginPage;
   pages: Array<{title: string, component: any, icon: string}>;
+  public static userDetails : any;
+  userDetails = {first_name: '1', last_name: '2', username: '3'};
   
   constructor(
      public platform: Platform,
      public statusBar: StatusBar, 
      public splashScreen: SplashScreen,
      public app: App, 
-     public menu: MenuController) 
-  {
+     public menu: MenuController,
+     public events: Events) 
+  {// abre constructor
 
     this.initializeApp();
       
@@ -32,8 +35,26 @@ export class MyApp {
       { title: 'Convenios', component: AgreementsPage, icon: "home"}
       
     ];
+    
+
+    this.events.subscribe('functionCall:usuarioIniciado', eventData => { 
+      this.setDataUser();
+    });
+
+
       
+  }// cierra constructor
+
+  setDataUser(){
+  
+      const data = JSON.parse(localStorage.getItem('userData'));
+      this.userDetails = data.userData;
+      console.log("SETDATAUSER");
+    
   }
+
+
+
       
   initializeApp() 
   {
@@ -43,7 +64,9 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
   }
+    
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
@@ -77,12 +100,14 @@ export class MyApp {
  
    logout(){
      //Api Token Logout 
+ 
      this.nav.setRoot(UserLoginPage);
-     localStorage.clear();
+     localStorage.clear();     
      this.menu.enable(false);
       setTimeout(()=> this.backToWelcome(), 1000);
      
    }
+
 
 }
 

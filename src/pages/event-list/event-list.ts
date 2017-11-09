@@ -6,7 +6,8 @@ import
     ToastController,
     NavParams,
     MenuController,
-    ModalController
+    ModalController,
+    Events
 } 
 from 'ionic-angular';
 
@@ -41,7 +42,8 @@ export class EventListPage {
     public navParams: NavParams,
     public authService: AuthServiceProvider,
     private toastCtrl:ToastController,
-    public menu: MenuController) {
+    public menu: MenuController,
+    public events: Events) {
     
       menu.enable(true);
     this.getEvents();
@@ -51,6 +53,33 @@ export class EventListPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad Login');
     this.menu.swipeEnable(true);
+    console.log("DID_LOAD---------------------------------------------------------------------------------------");
+  }
+
+  
+  ionViewCanEnter() {
+    console.log("CAN_ENTER---------------------------------------------------------------------------------------");
+    this.usuarioIniciado();
+  }
+
+  usuarioIniciado() {
+    this.events.publish('functionCall:usuarioIniciado', localStorage.getItem('userData'));
+  }
+
+  ionViewWillEnter() {
+    console.log("WILL_ENTER---------------------------------------------------------------------------------------");
+
+  }
+  ionViewDidEnter() {
+    console.log("DID_ENTER---------------------------------------------------------------------------------------");
+  }
+
+
+  ionViewWillLeave() {
+    console.log("WILL_LEAVE---------------------------------------------------------------------------------------");
+  }
+  ionViewDidLeave() {
+    console.log("DID_LEAVE---------------------------------------------------------------------------------------");
   }
 
 
