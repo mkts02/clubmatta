@@ -4,6 +4,7 @@ import {AuthServiceProvider} from "../../providers/auth-service";
 
 import {UserLoginPage} from "../user-login/user-login";
 import {EventListPage} from "../event-list/event-list";
+import { Common } from '../../providers/common';
 
 /**
  * Generated class for the Signup page.
@@ -22,7 +23,8 @@ export class UserRegisterPage {
   (
     public navCtrl : NavController, 
     public authService : AuthServiceProvider,
-    public events: Events
+    public events: Events, 
+    public common: Common
   ) {}
 
   ionViewDidLoad() {
@@ -42,7 +44,9 @@ export class UserRegisterPage {
                 ' Cumpleaños: ',this.userData.birthday,
                 ' Genero: ',this.userData.gender);
     */
-    if(this.userData.name && this.userData.lname && this.userData.email && this.userData.password  && this.userData.birthday  && this.userData.gender){
+    let com = this.common;
+    com.presentLoading();
+    if(this.userData.name && this.userData.lname && this.userData.email && this.userData.password  && this.userData.birthday  && this.userData.gender){      
       //Api connections
     this.authService.postData(this.userData, "signup").then((result) =>{
     this.resposeData = result;
@@ -50,7 +54,8 @@ export class UserRegisterPage {
     localStorage.setItem('userData', JSON.stringify(this.resposeData) )
     //si todo es correcto, los datos son guardados en la bd, se crea una sesion y se redirige a la pagina de eventos.
       this.usuarioIniciado();
-    this.navCtrl.setRoot(EventListPage);
+      com.closeLoading();
+    this.navCtrl.push(EventListPage);
     }, (err) => {
       //Connection failed message
     });

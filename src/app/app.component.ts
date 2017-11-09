@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav,Platform,MenuController,App, Events } from 'ionic-angular';
+import { Nav,Platform,MenuController,App, Events,AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { EventListPage } from '../pages/event-list/event-list';
@@ -24,7 +24,8 @@ export class MyApp {
      public splashScreen: SplashScreen,
      public app: App, 
      public menu: MenuController,
-     public events: Events) 
+     public events: Events,
+     private alertCtrl: AlertController) 
   {// abre constructor
 
     this.initializeApp();
@@ -49,8 +50,40 @@ export class MyApp {
   
       const data = JSON.parse(localStorage.getItem('userData'));
       this.userDetails = data.userData;
+      if(!this.userDetails.avatar){
+        this.userDetails.avatar="assets/imgs/iconoDrawer.png"
+        console.log("IF");
+      }else{
+        console.log("ELSE");
+      }
+
       console.log("SETDATAUSER");
+      console.log(this.userDetails.avatar);
     
+  }
+
+  presentConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Cerrar Sesión',
+      message: '¿Realmente quieres cerrar sesión?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Si',
+          handler: () => {
+            // cerrar sesion
+            this.logout();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 
