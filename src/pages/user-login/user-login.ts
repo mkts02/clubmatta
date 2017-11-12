@@ -154,7 +154,7 @@ export class UserLoginPage {
     com.presentLoading();
     this.gp.login({
       'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-      'webClientId': '230809789145-51me927sq4hccs7p1cbhsb8hp6421u7u.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+      'webClientId': '230809789145-h8udnp6h8ovttou8sart7dlfs8av1545.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true
     })
     .then(function (user) {
