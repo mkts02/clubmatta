@@ -53,7 +53,7 @@ export class EventListPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad Login');
     this.menu.swipeEnable(true);
-    console.log("DID_LOAD---------------------------------------------------------------------------------------");
+    console.log("DIDzz_LOAD---------------------------------------------------------------------------------------");
   }
 
   
