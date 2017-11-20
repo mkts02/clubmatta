@@ -1,6 +1,6 @@
 {
   "name": "clubmatta",
-  "app_id": "",
+  "app_id": "9a6d7060",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
