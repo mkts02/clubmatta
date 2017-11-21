@@ -22,6 +22,8 @@ page-user-login {
         height: auto;
         z-index: -100;
 		transform: translateX(-50%) translateY(-50%);
+		background: url('../assets/video/clubmatta.mp4') no-repeat;
+		background-size: cover;
     }
 
 	.scroll-content {
