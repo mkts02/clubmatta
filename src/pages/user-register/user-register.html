@@ -1,13 +1,13 @@
 <ion-content>
 
 
-  <img class="background" src="assets/imgs/register.jpg" />
+  <img class="background" src="/assets/imgs/register.jpg" />
 
 
   <ion-card>
     <ion-card-header>
       <div>
-        <img src="assets/imgs/logo.png">
+        <img src="/assets/imgs/logo.png">
       </div>
       <div>
         <ion-icon name="person-add"></ion-icon>
@@ -19,17 +19,34 @@
 
         <ion-grid>
 
-   
+          <ion-row>
+            <ion-col col-6 no-padding>
+              <ion-item>
                 <ion-input type="text" placeholder="Nombre" [(ngModel)]="userData.name"></ion-input>
-
+              </ion-item>
+            </ion-col>
+            <ion-col col-6 no-padding>
+              <ion-item>
                 <ion-input type="text" placeholder="Apellidos" [(ngModel)]="userData.lname"></ion-input>
-
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-item>
               <ion-input type="text" placeholder="Correo o WhatsApp" [(ngModel)]="userData.email"></ion-input>
-
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-item>
               <ion-input type="password" placeholder="Contraseña" [(ngModel)]="userData.password"></ion-input>
-
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-item>
               <ion-input type="text" placeholder="Fecha de nacimiento" [(ngModel)]="userData.birthday"></ion-input>
-
+            </ion-item>
+          </ion-row>
+          <ion-row>
             <ion-list radio-group [(ngModel)]="userData.gender" class="radioButton">
               <ion-row>
                 <ion-col col-6 no-padding>
