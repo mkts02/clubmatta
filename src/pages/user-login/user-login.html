@@ -15,7 +15,7 @@
       </div>
     </ion-card-header>
     <ion-card-content>
-      <ion-list no-line>
+      <form>
         <ion-item>
           <ion-input type="text" placeholder="Usuario" [(ngModel)]="userData.username"></ion-input>
         </ion-item>
@@ -35,7 +35,7 @@
         <button class="border-button" ion-button outline color="google" (click)="gpLogin()">
 					<ion-icon name="logo-google"></ion-icon>
         </button>
-      </ion-list>
+      </form>
       <p>
         <ion-grid>
           <ion-row>
