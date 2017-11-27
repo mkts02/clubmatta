@@ -44,27 +44,22 @@ export class ExpandableHeader {
       this.renderer.setElementStyle(this.element.nativeElement, 'height', this.minHeaderHeight + 'px');
     }
 
-    let pix = (this.newHeaderHeight + 65)/10;
-    
      for(let headerElement of this.element.nativeElement.children){
        let totalHeight = headerElement.offsetTop + headerElement.clientHeight;
 
-       if(headerElement.tagName == "ION-ITEM"){
+       let imageCover = document.getElementById("imageCover");
+       let imageHeader = document.getElementById("imageHeader");
 
-        for (let title of headerElement.children)
-        {
-          while(pix>14){
-            title.setAttribute("style", "font-size:"+ pix +"px");
-            break;
-          } 
-        }
+       if(imageCover){
 
         if(headerElement.clientHeight<=80){
-          this.renderer.setElementStyle(headerElement, 'background', '#290329');
-        } 
-        else if (totalHeight <= this.newHeaderHeight) {
-          //headerElement.isHidden = false;
-          headerElement.setAttribute("style", "background:url('"+this.image+"');background-size: 100%; no-repeat");
+          imageHeader.setAttribute("style", "background:#662674;");
+          this.renderer.setElementClass(headerElement, "animacion", true);
+        }else if (totalHeight <= this.newHeaderHeight) {
+          this.renderer.setElementClass(headerElement, "animacion", false);
+          imageCover.setAttribute("style", "background:none");
+          imageHeader.setAttribute("style", "background-image:url('"+this.image+"')");
+
         }
       }
      }

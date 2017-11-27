@@ -2,40 +2,6 @@
     
 page-event-description {
     
-    expandable-header{
-        background: #290329;
-    }
-    expandable-header ion-item {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        color: #fff;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    
-    }
-    expandable-header ion-item div{
-        position: absolute;
-        bottom: 0;
-        color: #fff;
-        height: 60px;
-        width: 100%;
-        text-align: center;
-        line-height: 60px;
-        z-index: 101;
-    }
-    expandable-header .toolbar{
-        position: absolute;
-        top: 0;
-        color: #fff;
-        z-index: 102;
-    }
-    expandable-header .item-md.item-block .item-inner{
-        border:none;
-    }
-    expandable-header .item-ios.item-block .item-inner{
-        border: 0;
-    }
     ion-segment{
         width: 100%;
         height: 100%;

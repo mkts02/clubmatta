@@ -1,10 +1,13 @@
 <ion-header color="fondo">
-        <expandable-header class="img-container" [scrollArea]="mycontent" maxHeaderHeight="185" minHeaderHeight="60" [image]="item.image">
-                <ion-navbar class="show-back-button"></ion-navbar>
-                <ion-item no-padding [style.backgroundImage]="'url(' + item.image + ')'">
-                        <div>{{item.name}}</div>
-                </ion-item>
-        </expandable-header>
+        <expandable-header class="img-container" *ngIf="item" [scrollArea]="mycontent" maxHeaderHeight="185" minHeaderHeight="60"
+        [image]="item.image">
+        <ion-navbar class="show-back-button"></ion-navbar>
+        <div class="imageHeader" id="imageHeader" [style.backgroundImage]="'url(' + item.image + ')'">
+          <ion-item no-padding class="imageCover" id="imageCover">
+            <div>{{item.name}}</div>
+          </ion-item>
+        </div>
+      </expandable-header>
 
         <ion-segment no-border-top [(ngModel)]="events" class="color-texto">
                 <ion-segment-button value="info">Información</ion-segment-button>

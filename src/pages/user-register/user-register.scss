@@ -76,8 +76,12 @@ page-user-register {
         }
         .item {
             margin-bottom: 10px;
-            background: rgba(85,26,139,0.7);
+            background: rgb(87,0,149);
             border: medium none;
+
+            ion-label{
+               
+            }
 
             .input-wrapper, {
                 color: rgba(255,255,255,0.5); 
