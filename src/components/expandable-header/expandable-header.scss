@@ -1,8 +1,8 @@
 expandable-header {
     
        background-color: black;
-       display: block;
-       overflow: hidden;
+       display: block !important;
+       overflow: hidden !important;
 
     .animacion{
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
