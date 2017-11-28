@@ -14,6 +14,8 @@ import { EventListPage } from '../pages/event-list/event-list';
 import { EventDescriptionPage } from '../pages/event-description/event-description';
 import { EventInvitationModalPage } from '../pages/event-invitation-modal/event-invitation-modal';
 import { AgreementsPage } from '../pages/agreements/agreements';
+import { EventInvitationListPage } from '../pages/event-invitation-list/event-invitation-list';
+import { UserInvitationModalPage } from '../pages/user-invitation-modal/user-invitation-modal';
 //end pages
 
 //new components
@@ -37,7 +39,9 @@ import { DisqusModule } from "ngx-disqus";
     EventDescriptionPage,
     EventInvitationModalPage,
     AgreementsPage,
-    ExpandableHeader
+    ExpandableHeader,
+    EventInvitationListPage,
+    UserInvitationModalPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -53,7 +57,9 @@ import { DisqusModule } from "ngx-disqus";
     EventListPage,
     EventDescriptionPage,
     EventInvitationModalPage,
-    AgreementsPage
+    AgreementsPage,
+    EventInvitationListPage,
+    UserInvitationModalPage
   ],
   providers: [
     StatusBar,

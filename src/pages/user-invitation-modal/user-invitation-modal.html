@@ -1,0 +1,22 @@
+<ion-header>
+    
+      <ion-navbar color="clubmatta">
+        <ion-title>{{ item.name }}</ion-title>
+        <ion-buttons end>
+          <button ion-button class="close" (click)="closeModal()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+      <ion-card *ngIf="showQR">
+        <ngx-qrcode [qrc-value]="showQR"></ngx-qrcode>
+        <ion-card-content>
+          <p>{{ showQR }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>

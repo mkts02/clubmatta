@@ -1,54 +1,54 @@
-<ion-content no-bounce>
+<ion-content>
 
   <video webkit-playsinline autoplay playsinline muted loop>
     <source src="assets/video/clubmatta.mp4">
   </video>
-  <!--
-  <ion-card>
-    <ion-card-header>
-      <div>
-        <img src="assets/imgs/logo.png">
+
+  <div class="container">
+
+    <div class="logo">
+      <div class="image">
+        <img class="portrait" alt="Image" src="assets/imgs/logo.png">
       </div>
-      <div>
+      <div class="text">
         <ion-icon name="person"></ion-icon>
         Inicia Sesión
       </div>
-    </ion-card-header>
-    <ion-card-content>
+    </div>
+
+    <div class="form">
       <ion-item>
+        <ion-label>
+          <ion-icon name="person"></ion-icon>
+        </ion-label>
         <ion-input type="text" placeholder="Usuario" [(ngModel)]="userData.username"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label>
+          <ion-icon name="key"></ion-icon>
+        </ion-label>
         <ion-input type="password" placeholder="Contraseña" [(ngModel)]="userData.password"></ion-input>
       </ion-item>
-      <p>
+      <button ion-button block color="clubmatta" (click)="login()">Entrar</button>
+    </div>
+
+    <div class="afterForm">
+      <!--<p>
         <ion-icon name="key"></ion-icon>¿Olvidaste tu contraseña?
       </p>
-      <button ion-button block color="clubmatta" (click)="login()">Entrar</button>
+    -->
       <p>O inicia sesión con: </p>
-      <button class="border-button" ion-button outline color="facebook" (click)="fbLogin()">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </button>
-      <button class="border-button" ion-button outline color="google" (click)="gpLogin()">
-        <ion-icon name="logo-google"></ion-icon>
-      </button>
+      <div class="buttons" text-center>
+        <button class="border-button" ion-button outline color="facebook" (click)="fbLogin()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+        <button class="border-button" ion-button outline color="google" (click)="gpLogin()">
+          <ion-icon name="logo-google"></ion-icon>
+        </button>
+      </div>
+    </div>
 
-    </ion-card-content>
+    <button class="bottom" ion-button clear full color="light" (click)="Gosignup()">No tienes cuenta? Registrate</button>
 
-
-  </ion-card>
--->
-  <form (ngSubmit)="logForm()">
-    <ion-item>
-      <ion-label>Todo</ion-label>
-      <ion-input type="text" name="title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Description</ion-label>
-      <ion-textarea  name="description"></ion-textarea>
-    </ion-item>
-    <button ion-button type="submit" block>Add Todo</button>
-  </form>
-
-  <button class="bottom" ion-button clear full color="light" (click)="Gosignup()">No tienes cuenta? Registrate</button>
+  </div>
 </ion-content>

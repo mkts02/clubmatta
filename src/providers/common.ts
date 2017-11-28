@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoadingController } from 'ionic-angular';
+import { LoadingController,ToastController, Toast  } from 'ionic-angular';
 
 /*
   Generated class for the Common provider.
@@ -10,7 +10,8 @@ import { LoadingController } from 'ionic-angular';
 @Injectable()
 export class Common {
   public loader: any;
-  constructor(public loadingCtrl: LoadingController) {
+  private toastInstance: Toast;
+  constructor(public loadingCtrl: LoadingController,public toastCtrl: ToastController) {
     console.log('Hello Common Provider');
   }
 
@@ -21,6 +22,26 @@ export class Common {
 
   closeLoading(){
   this.loader.dismiss();
+  }
+
+  presentToast(mensaje, duracion, posicion){
+
+    if(this.toastInstance) {
+      return;
+    }
+
+    this.toastInstance = this.toastCtrl.create({
+      message: mensaje,
+      duration: duracion,
+      position: posicion
+      
+    });
+  
+    this.toastInstance.onDidDismiss(() => {
+      this.toastInstance = null;
+    });
+  
+    this.toastInstance.present();
   }
 
 }

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import {AuthServiceProvider} from "../../providers/auth-service";
+import { Common } from '../../providers/common';
+import { Response } from '@angular/http/src/static_response';
+
 
 @IonicPage()
 @Component({
@@ -8,16 +12,18 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class EventInvitationModalPage {
 
-  QRencode : any;
   showQR = null;
   qrData = null;
   userDetails : any;
   item : any;
-  invitation = {"event_id":"","staff_id":"","user_id":"","image_url":""};
+  invitation = {"event_id":"","staff_id":"","user_id":""};
+  resposeData : any;
   
   constructor(
     public view: ViewController,
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public authService : AuthServiceProvider,
+    public common: Common) {
     
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
@@ -38,29 +44,22 @@ export class EventInvitationModalPage {
 
   createCode() {
     this.invitation.staff_id = this.qrData;
-
     this.showQR = JSON.stringify(this.invitation);
-    /*
-    this.QRencode = this.barcodeScanner.encode(this.barcodeScanner.Encode.TEXT_TYPE, this.item);
-   
-    this.base64ToGallery.base64ToGallery(this.QRencode, { prefix: '_img' }).then(
-      res => console.log('Saved image to gallery ', res),
-      err => console.log('Error saving image to gallery ', err)
-    );
-    //this.barcodeScanner.encode(this.barcodeScanner.Encode.TEXT_TYPE, this.item);
-    */
-}
-/*
-  scanCode() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.scannedCode = barcodeData.text;
+    let com = this.common;
+    //com.presentLoading();
+    this.authService.postData(this.invitation, "invitation").then((result) =>{
+    this.resposeData = result;
+    com.closeLoading();
+      if(this.resposeData.mensaje.text=="error"){
+        com.presentToast("No puedes asistir dos veces al mismo Evento.",  3000, "bottom");
+      }else if(this.resposeData.mensaje.text=="exito"){
+        com.presentToast("Felicitaciones, ya te encuentras en nuesta lista de invitados!",  3000, "bottom");
+      }else{
+        com.presentToast("Ha ocurrido un error desconocido, por favor inténtelo nuevamente mas tarde.",  3000, "bottom");
+      }
     }, (err) => {
-        console.log('Error: ', err);
+     
     });
+    
   }
-
-*/
-
-
-
 }

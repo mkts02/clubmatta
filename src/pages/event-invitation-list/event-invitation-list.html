@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar hideBackButton color="clubmatta">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--
+      <button ion-button color="light" clear icon-only float-right (click)="home()">
+        <ion-icon name='home' is-active="false"></ion-icon>
+      </button> -->
+    <ion-title no-padding>Mis Eventos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cards-bg social-cards" color="fondo">
+  <p *ngIf="vacios" class="vacios">{{ vacios }}</p>
+  <ion-card class="fondo-card" *ngFor="let item of dataSet; let msgIndex = index">
+    <div class="thumbnail">
+      <img [src]="item.image" class="portrait" alt="Image" />
+    </div>
+    <ion-grid no-padding>
+      <ion-row text-center class="color-card">
+        <ion-col col-6>
+          <button class="texto" ion-button icon-left full clear small (click)="descripcionEvento(item)">
+            <ion-icon name="paper"></ion-icon>INFORMACIÓN</button>
+        </ion-col>
+        <ion-col col-6>
+          <button class="texto" ion-button icon-left full clear small (click)="showQr(item)">
+            <ion-icon name="calendar"></ion-icon>Ver codigo QR</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

@@ -1,8 +1,11 @@
 page-user-login {
 
+	.scroll-content{
+		background: black;
+	}
 
 	video {
-        position: fixed;
+        position: absolute;
         top: 50%;
         left: 50%;
         min-width: 100%;
@@ -15,7 +18,77 @@ page-user-login {
 		background-size: cover;
     }
 
+	.container{
+		position: absolute;
+		width: 100%;
+		padding: 20px;
+		top: 0;
+	}
+	.container .logo{
+		width: 100%;
+		margin-top: 15px;
+	}
+	.container .logo .image {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+	.container .logo .text{
+		color: #FFF;
+		font-size:15px;
+		text-align: center;
+		padding: 20px 0;
+		width: 100%;
 	
+	}
+	
+	.container .form{
+		width: 100%;
+	}
+
+	.item {
+		margin-bottom: 10px;
+		background: rgba(255, 255, 255, 0.5);
+		border: medium none;
+
+		.text-input, {
+			color: #fff!important;
+		}
+
+		input::-moz-placeholder  {
+			color: #fff!important;
+		}
+
+		input:-moz-placeholder {
+			color: #fff!important;
+		}
+
+		*::-webkit-input-placeholder  {
+			color: #fff!important;
+		}
+
+		*:-ms-input-placeholder  {
+			color: #fff!important;
+		}
+
+		*:-moz-placeholder  {
+			color: #fff!important;
+		}
+
+	}
+
+	.afterForm{
+		width: 100%;
+	}
+	.afterForm p{
+		width: 100%;
+		padding: 10px 0;
+		text-align: center;
+		color: #fff;
+	}
+	.afterForm button{
+		
+	}
 
 
 }

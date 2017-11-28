@@ -1,9 +1,9 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="clubmatta">
     <ion-title>Asistencia</ion-title>
     <ion-buttons end>
-      <button ion-button (click)="closeModal()">
+      <button class="close" ion-button (click)="closeModal()">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
@@ -13,16 +13,17 @@
 
 
 <ion-content padding>
+  <p>Introduzca un codigo de staff, si no cuenta con este, solo presione el botón "Asistir"</p>
   <ion-item>
-    <ion-input type="text" placeholder="MY QR Code data" [(ngModel)]="qrData">
+    <ion-input type="text" placeholder="código staff" [(ngModel)]="qrData">
     </ion-input>
   </ion-item>
-  <button ion-button full icon-left (click)="createCode()"><ion-icon name="barcode"></ion-icon>Create Code</button>
+  <button ion-button full icon-left (click)="createCode()"><ion-icon name="barcode"></ion-icon>Asistir</button>
  
   <ion-card *ngIf="showQR">
     <ngx-qrcode [qrc-value]="showQR"></ngx-qrcode>
     <ion-card-content>
-      <p>Value: {{ showQR }}</p>
+      <p>{{ showQR }}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
