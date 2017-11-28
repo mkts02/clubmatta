@@ -1,16 +1,5 @@
 page-user-login {
 
-	.border-button{
-		min-width: 50px;
-		min-height: 50px;
-		border-radius: 50%;
-		border: 2px solid;
-
-	}
-	button span ion-icon{
-		padding-right: 0px !important;
-		font-size: 25px;
-	}
 
 	video {
         position: fixed;
@@ -26,84 +15,7 @@ page-user-login {
 		background-size: cover;
     }
 
-	.scroll-content {
-		overflow: hidden !important;
-		background: black;
-		align-content: center;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-	}
-
-	ion-card.card {
-		margin: auto;
-		box-shadow: none;
-		background: none;
-		border-radius: 5px;
-		max-width: 500px;
-	}
-
-	a, p,
-	ion-card-header.card-header {
-		color: #fff!important;
-	}
-
-	ion-card-header div:first-child {
-		margin:0 auto;
-		border-radius: 10px;
-		max-height:300px;
-		max-width:300px;
-		margin-top:10px;
-		overflow:hidden;
-
-	}
-	ion-card-header div:first-child ion-img{
-		background: none;
-	}
-
-	.list > .item-block:first-child {
-		border: medium none;
-	}
-
-	.item {
-		margin-bottom: 10px;
-		background: rgba(255, 255, 255, 0.5);
-		border: medium none;
-
-		.text-input, {
-			color: #fff;
-		}
-
-		input::-moz-placeholder  {
-			color: #fff!important;
-		}
-
-		input:-moz-placeholder {
-			color: #fff!important;
-		}
-
-		*::-webkit-input-placeholder  {
-			color: #fff!important;
-		}
-
-		*:-ms-input-placeholder  {
-			color: #fff!important;
-		}
-
-		*:-moz-placeholder  {
-			color: #fff!important;
-		}
-	}
-
-	.icon {
-		padding-right: 10px;
-	}
-	a {
-		text-decoration: none;
-	}
-	p{
-		padding: 5px 0 !important;
-	}
+	
 
 
 }

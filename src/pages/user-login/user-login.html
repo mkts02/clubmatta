@@ -3,7 +3,7 @@
   <video webkit-playsinline autoplay playsinline muted loop>
     <source src="assets/video/clubmatta.mp4">
   </video>
-
+  <!--
   <ion-card>
     <ion-card-header>
       <div>
@@ -37,5 +37,18 @@
 
 
   </ion-card>
+-->
+  <form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Todo</ion-label>
+      <ion-input type="text" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea  name="description"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" block>Add Todo</button>
+  </form>
+
   <button class="bottom" ion-button clear full color="light" (click)="Gosignup()">No tienes cuenta? Registrate</button>
 </ion-content>
